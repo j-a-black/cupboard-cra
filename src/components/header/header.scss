@@ -3,18 +3,27 @@
 .header {
   width: 100%;
   height: auto;
-  position: fixed;
   border-bottom: 1px solid $c-gray-80;
-  box-shadow: 5px 5px 5px $c-gray-90;
+  background-color: #f7f1e3;
 
   .header-container {
     margin: 0 auto;
+    padding: 0 10px;
     width: inherit;
-    max-width: 1024px;
+    max-width: 768px;
     height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .logo {
     font-weight: 300;
+    margin: 10px 0;
+  }
+
+  .subtext {
+    margin-bottom: 20px;
   }
 }
