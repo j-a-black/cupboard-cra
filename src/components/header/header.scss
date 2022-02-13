@@ -1,0 +1,20 @@
+@import "../../sassStyles/variables";
+
+.header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  border-bottom: 1px solid $c-gray-80;
+  box-shadow: 5px 5px 5px $c-gray-90;
+
+  .header-container {
+    margin: 0 auto;
+    width: inherit;
+    max-width: 1024px;
+    height: inherit;
+  }
+
+  .logo {
+    font-weight: 300;
+  }
+}
