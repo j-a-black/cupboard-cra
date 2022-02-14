@@ -3,7 +3,7 @@ import Search from "../search/Search";
 
 import "./header.scss";
 
-const Header = () => {
+const Header = ({ onSearchSubmit }) => {
   return (
     <header className="header">
       <div className="header-container">
@@ -11,7 +11,7 @@ const Header = () => {
         <span className="subtext">
           What ingredient would you like to search for?
         </span>
-        <Search />
+        <Search onSearchSubmit={onSearchSubmit} />
       </div>
     </header>
   );

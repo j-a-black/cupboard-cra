@@ -5,13 +5,15 @@
   height: auto;
   border-bottom: 1px solid $c-gray-80;
   background-color: #f7f1e3;
+  position: relative;
 
   .header-container {
     margin: 0 auto;
     padding: 0 10px;
     width: inherit;
+    width: 100%;
     max-width: 768px;
-    height: inherit;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;

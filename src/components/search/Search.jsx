@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
 import "./search.scss";
 
-const onFormSubmit = (event) => {
-  event.preventDefault();
-};
+const Search = ({ onSearchSubmit }) => {
+  const [term, setTerm] = useState("");
 
-const Search = () => {
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    onSearchSubmit(term);
+  };
+
+  const onInputChange = (e) => {
+    // console.log(e.target.value);
+    setTerm(e.target.value);
+    console.log(term);
+  };
+
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <button
@@ -20,10 +29,11 @@ const Search = () => {
       <input
         type="text"
         className="input-field"
-        id="input-field"
         maxLength="100"
         placeholder="try 'eggs' or 'chicken breast'"
         autoFocus
+        value={term}
+        onChange={onInputChange}
       />
     </form>
   );
