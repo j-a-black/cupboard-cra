@@ -6,27 +6,27 @@ import ResultsList from "./components/resultsList/ResultsList";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   const onSearchSubmit = async (term) => {
-    // TODO: add fetch
     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${term}`;
+
     try {
       const response = await fetch(url);
       const jsonListData = await response.json();
-      const mealData = jsonListData.meals;
+      const results = await jsonListData.meals;
 
-      // return { mealData };
-      console.log(mealData);
+      setData(results);
     } catch (err) {
-      console.log(err);
+      console.log(`Sorry! Something went wrong: ${err}`);
     }
   };
 
   return (
     <div>
       <Header onSearchSubmit={onSearchSubmit} />
-      <ResultsList />
+      <ResultsList data={data} />
+      {console.log(data[0])}
     </div>
   );
 };

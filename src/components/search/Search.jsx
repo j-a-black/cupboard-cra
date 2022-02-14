@@ -6,15 +6,13 @@ import "./search.scss";
 const Search = ({ onSearchSubmit }) => {
   const [term, setTerm] = useState("");
 
+  const onInputChange = (e) => {
+    setTerm(e.target.value);
+  };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     onSearchSubmit(term);
-  };
-
-  const onInputChange = (e) => {
-    // console.log(e.target.value);
-    setTerm(e.target.value);
-    console.log(term);
   };
 
   return (
