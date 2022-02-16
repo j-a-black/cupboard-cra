@@ -6,12 +6,7 @@ const ResultItem = ({ item }) => {
   return (
     <article className="card">
       <div className="card__image-box">
-        <img
-          src={item.strMealThumb}
-          alt={item.strMeal}
-          width="100"
-          height="100"
-        />
+        {/* <img src={item.strMealThumb} alt={item.strMeal} /> */}
       </div>
       <div className="card__text-box">
         <span className="card__title">{item.strMeal}</span>
