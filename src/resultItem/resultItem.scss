@@ -1,6 +1,7 @@
 @import "../sassStyles/variables";
 
 .card {
+  margin: auto;
   padding: 10px 0;
   width: 100%;
   max-width: 400px;
@@ -8,18 +9,19 @@
   border-bottom: 2px solid $c-gray-75;
   display: flex;
 
-  &__image-box {
-    border: 1px solid $c-gray-80;
-    width: 100px;
-    height: 100px;
-    flex-grow: 1;
-    margin-right: 5px;
+  // &__image-box {
+  //   border: 1px solid $c-gray-80;
+  //   width: 100px;
+  //   height: 100px;
+  //   flex-grow: 1;
+  //   margin-right: 5px;
+  // }
 
-    img {
-      width: 102px;
-      height: 102px;
-      border-radius: 10px;
-    }
+  img {
+    margin-right: 10px;
+    width: 102px;
+    height: 102px;
+    border-radius: 10px;
   }
 
   &__text-box {
@@ -28,5 +30,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  &__card-title {
+    font-size: 14px;
+  }
+
+  &__btn {
+    padding: 10px 0;
+    cursor: pointer;
   }
 }
