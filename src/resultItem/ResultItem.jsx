@@ -14,6 +14,7 @@ const ResultItem = ({ item, getMealID, mealDataId }) => {
   const onButtonClicked = () => {
     getMealID(mealDataId);
   };
+
   return (
     <article className="card">
       <img src={item.strMealThumb} alt={item.strMeal} />

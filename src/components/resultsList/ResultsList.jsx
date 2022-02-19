@@ -5,11 +5,29 @@ import MealModal from "../mealModal/MealModal";
 import "./resultsList.scss";
 
 const ResultsList = ({ data }) => {
-  const [mealID, setMealID] = useState(null);
+  const [mealIdData, setMealIdData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  //   const onButtonSubmit = async () => {
+  //   console.log(mealID);
+  //   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`;
+  //   const response = await fetch(url);
+  //   const jsonListData = await response.json();
+  //   const mealData = jsonListData.meals;
+  //   console.log(mealData);
+  // };
 
   const getMealID = async (id) => {
-    setMealID(id);
-    // console.log(mealID);
+    setShowModal(true);
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const response = await fetch(url);
+    const jsonListData = await response.json();
+    const mealData = jsonListData.meals;
+    setMealIdData(mealData);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   const renderResultItems = data.map((item, index) => {
@@ -26,8 +44,10 @@ const ResultsList = ({ data }) => {
   return (
     <div className="list-container">
       <div>Results: {data.length}</div>
-      {mealID ? <MealModal /> : null}
       <br />
+      {showModal ? (
+        <MealModal closeModal={closeModal} mealIdData={mealIdData} />
+      ) : null}
       {renderResultItems}
     </div>
   );
