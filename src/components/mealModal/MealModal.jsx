@@ -11,11 +11,14 @@ const MealModal = ({ closeModal, mealIdData }) => {
           <MdChevronLeft className="chevron-left" /> Back to results
         </span>
       </div>
-      <img
-        className="modal-image"
-        src={mealIdData.strMealThumb}
-        alt={mealIdData.strMeal}
-      />
+      <div className="modal">
+        <img
+          className="modal__image"
+          src={mealIdData[0].strMealThumb}
+          alt={mealIdData[0].strMeal}
+        />
+      </div>
+      {console.log(mealIdData)}
     </div>
   );
 };

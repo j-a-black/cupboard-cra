@@ -34,4 +34,18 @@
   .chevron-left {
     font-size: 30px;
   }
+
+  .modal {
+    padding: 10px;
+    width: 100%;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+
+    &__image {
+      width: 100%;
+      height: 30vh;
+      object-fit: cover;
+      border-radius: 5%;
+    }
+  }
 }

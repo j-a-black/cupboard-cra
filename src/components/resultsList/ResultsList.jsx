@@ -18,12 +18,12 @@ const ResultsList = ({ data }) => {
   // };
 
   const getMealID = async (id) => {
-    setShowModal(true);
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     const response = await fetch(url);
     const jsonListData = await response.json();
     const mealData = jsonListData.meals;
     setMealIdData(mealData);
+    setShowModal(true);
   };
 
   const closeModal = () => {
