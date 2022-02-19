@@ -26,7 +26,7 @@ const ResultsList = ({ data }) => {
   return (
     <div className="list-container">
       <div>Results: {data.length}</div>
-      <MealModal />
+      {mealID ? <MealModal /> : null}
       <br />
       {renderResultItems}
     </div>
