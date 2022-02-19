@@ -26,7 +26,7 @@ const App = () => {
     <div>
       <Header onSearchSubmit={onSearchSubmit} />
       <ResultsList data={data} />
-      {console.log(data[0])}
+      {/* {console.log(data[0])} */}
     </div>
   );
 };
