@@ -8,15 +8,6 @@ const ResultsList = ({ data }) => {
   const [mealIdData, setMealIdData] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  //   const onButtonSubmit = async () => {
-  //   console.log(mealID);
-  //   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`;
-  //   const response = await fetch(url);
-  //   const jsonListData = await response.json();
-  //   const mealData = jsonListData.meals;
-  //   console.log(mealData);
-  // };
-
   const getMealID = async (id) => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     const response = await fetch(url);
