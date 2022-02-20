@@ -22,6 +22,11 @@ const MealModal = ({ closeModal, mealIdData }) => {
     return <Ingredients key={index} ingredient={ingredient} />;
   });
 
+  let addExtraBreakBtnParagraphs = mealIdData[0].strInstructions.replace(
+    /(?:\\[rn]|[\r\n]+)+/g,
+    "\r\n\r\n"
+  );
+
   return (
     <div className="modal-container">
       <div className="top-bar">
@@ -43,13 +48,18 @@ const MealModal = ({ closeModal, mealIdData }) => {
           <span className="modal__sub-text">
             Category: {mealIdData[0].strCategory}
           </span>
-          <ul>{renderIngredients}</ul>
+          <ul className="modal__ingredients-container">{renderIngredients}</ul>
           <div className="modal__instructions">
-            {mealIdData[0].strInstructions.replace(
-              /(?:\\[rn]|[\r\n]+)+/g,
-              "\r\n\r\n"
-            )}
+            {addExtraBreakBtnParagraphs}
           </div>
+          <a
+            className="modal__btn"
+            href={mealIdData[0].strYoutube}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Watch on YouTube
+          </a>
         </div>
       </div>
       {console.log(mealIdData[0])}
