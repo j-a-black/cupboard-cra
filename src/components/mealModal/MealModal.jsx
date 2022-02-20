@@ -6,7 +6,7 @@ import "./mealModal.scss";
 
 const MealModal = ({ closeModal, mealIdData }) => {
   let ingredients = [];
-
+  // looping through ingredients and measurements
   for (let i = 1; i <= 20; i++) {
     let obj = mealIdData[0];
     let ingItems = obj[`strIngredient${i}`];
@@ -18,13 +18,10 @@ const MealModal = ({ closeModal, mealIdData }) => {
     }
   }
 
-  // mealIdData.map((ing) => {
-  //   console.log(ing);
-  // });
-
   const renderIngredients = ingredients.map((ingredient, index) => {
     return <Ingredients key={index} ingredient={ingredient} />;
   });
+
   return (
     <div className="modal-container">
       <div className="top-bar">
@@ -47,9 +44,15 @@ const MealModal = ({ closeModal, mealIdData }) => {
             Category: {mealIdData[0].strCategory}
           </span>
           <ul>{renderIngredients}</ul>
+          <div className="modal__instructions">
+            {mealIdData[0].strInstructions.replace(
+              /(?:\\[rn]|[\r\n]+)+/g,
+              "\r\n\r\n"
+            )}
+          </div>
         </div>
       </div>
-      {console.log(mealIdData)}
+      {console.log(mealIdData[0])}
     </div>
   );
 };
