@@ -34,12 +34,14 @@ const ResultsList = ({ data }) => {
 
   return (
     <div className="list-container">
-      <div>Results: {data.length}</div>
+      <div className="quantity">Results: {data.length}</div>
       <br />
-      {showModal ? (
-        <MealModal closeModal={closeModal} mealIdData={mealIdData} />
-      ) : null}
-      {renderResultItems}
+      <div className="data-box">
+        <div className="render-results-box">{renderResultItems}</div>
+        {showModal ? (
+          <MealModal closeModal={closeModal} mealIdData={mealIdData} />
+        ) : null}
+      </div>
     </div>
   );
 };
