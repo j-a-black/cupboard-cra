@@ -1,4 +1,5 @@
 @import "../../sassStyles/variables";
+@import "../../sassStyles/typography";
 
 .header {
   width: 100%;
@@ -21,8 +22,11 @@
   }
 
   .logo {
-    font-weight: 300;
+    font-family: $font-title;
+    font-weight: 500;
+    font-size: 52px;
     margin: 10px 0;
+    color: $color-primary;
   }
 
   .subtext {

@@ -4,7 +4,7 @@ import MealModal from "../mealModal/MealModal";
 
 import "./resultsList.scss";
 
-const ResultsList = ({ data, initialMealId }) => {
+const ResultsList = ({ data, initialMealId, loading, setLoading }) => {
   const [mealIdData, setMealIdData] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
