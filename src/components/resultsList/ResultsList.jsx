@@ -54,6 +54,11 @@ const ResultsList = ({ data, initialMealId }) => {
     };
   }, [initialMealId]);
 
+  useEffect(() => {
+    console.log(`results list rendered: data is - ${data}`);
+    document.querySelector(".render-results-box").scrollTo(0, 0);
+  }, [data]);
+
   return (
     <div className="list-container">
       <div className="quantity">Results: {data.length}</div>

@@ -8,9 +8,6 @@ import "./mealModal.scss";
 const MealModal = ({ closeModal, mealIdData }) => {
   let ingredients = [];
 
-  // console.log(`inital id: ${initialMealId}`);
-  // console.log(`clicked id: ${mealIdData}`);
-
   // looping through ingredients and measurements
   for (let i = 1; i <= 20; i++) {
     let obj = mealIdData[0];
