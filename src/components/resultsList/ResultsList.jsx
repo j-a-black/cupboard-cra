@@ -52,11 +52,12 @@ const ResultsList = ({ data, initialMealId }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [initialMealId]);
+  }, [initialMealId, width]);
 
   useEffect(() => {
-    console.log(`results list rendered: data is - ${data}`);
+    console.log(`results list rendered`);
     document.querySelector(".render-results-box").scrollTo(0, 0);
+    document.querySelector(".list-container").scrollTo(0, 0);
   }, [data]);
 
   return (

@@ -12,7 +12,7 @@ const Search = ({ onSearchSubmit }) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    onSearchSubmit(term);
+    onSearchSubmit(term.trim().split(" ").join("_"));
   };
 
   return (

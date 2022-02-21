@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { MdChevronLeft } from "react-icons/md";
-import { GiCheckMark } from "react-icons/gi";
 import Ingredients from "../ingredients/Ingredients";
 
 import "./mealModal.scss";
