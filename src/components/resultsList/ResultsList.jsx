@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResultItem from "../../resultItem/ResultItem";
 import MealModal from "../mealModal/MealModal";
 
 import "./resultsList.scss";
 
-const ResultsList = ({ data }) => {
+const ResultsList = ({ data, initialMealId }) => {
   const [mealIdData, setMealIdData] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const getMealID = async (id) => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
@@ -31,6 +32,27 @@ const ResultsList = ({ data }) => {
       />
     );
   });
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    if (width >= 768 && initialMealId) {
+      const fetchData = async (id) => {
+        const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+        const response = await fetch(url);
+        const jsonListData = await response.json();
+        const mealData = jsonListData.meals;
+        setMealIdData(mealData);
+        setShowModal(true);
+      };
+      fetchData(initialMealId);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [initialMealId]);
 
   return (
     <div className="list-container">

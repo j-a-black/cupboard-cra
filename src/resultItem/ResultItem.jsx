@@ -13,7 +13,7 @@ const ResultItem = ({ item, getMealID, mealDataId }) => {
       <div className="card__text-box">
         <span className="card__title">{item.strMeal}</span>
         <button className="card__btn" onClick={onButtonClicked}>
-          View Receipe
+          View Recipe
         </button>
       </div>
     </article>
