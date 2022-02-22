@@ -34,20 +34,26 @@ const App = () => {
     setData([]);
   };
 
-  // useEffect(() => {
-  //   if (loading) {
-  //     console.log(`loading rendered`);
-  //     document.querySelector(".list-container").style.visibility = "hidden";
-  //   } else {
-  //     document.querySelector(".list-container").style.visibility = "visible";
-  //   }
-  // }, [loading]);
+  useEffect(() => {
+    if (loading) {
+      console.log(`loading rendered`);
+      document.querySelector(".list-container").style.visibility = "hidden";
+    } else {
+      document.querySelector(".list-container").style.visibility = "visible";
+    }
+  }, [loading]);
 
   return (
     <div>
       <Header onSearchSubmit={onSearchSubmit} />
-      {loading ? <div className="loader"></div> : null}
-      <div className="loader"></div>
+      {loading ? (
+        <div className="loader-overlay">
+          <span className="loader"></span>
+        </div>
+      ) : null}
+      {/* <div className="loader-overlay">
+        <span className="loader"></span>
+      </div> */}
       <ErrorBoundary
         FallbackComponent={Fallback}
         onReset={handleReset}

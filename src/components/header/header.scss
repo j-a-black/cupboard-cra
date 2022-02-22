@@ -24,12 +24,14 @@
   .logo {
     font-family: $font-title;
     font-weight: 500;
-    font-size: 52px;
+    font-size: 40px;
     margin: 10px 0;
     color: $color-primary;
   }
 
   .subtext {
     margin-bottom: 20px;
+    font-size: 15px;
+    text-align: center;
   }
 }
