@@ -16,6 +16,10 @@
     box-shadow: 2px 2px 5px $c-gray-85;
   }
 
+  &:focus-within {
+    border-color: $color-primary;
+  }
+
   .search-button {
     border: none;
     margin-right: 10px;
