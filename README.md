@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# About the Project
+
+Cupboard allows users to find recipes based on a search for a single ingredient.
+
+![Landing Page](/src/images/landing_page.png?raw=true)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
