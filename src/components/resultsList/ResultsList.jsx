@@ -52,7 +52,7 @@ const ResultsList = ({ data, initialMealId, loading, setLoading }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [initialMealId, width]);
+  }, [initialMealId]);
 
   useEffect(() => {
     document.querySelector(".render-results-box").scrollTo(0, 0);
