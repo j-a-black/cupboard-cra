@@ -55,7 +55,6 @@ const ResultsList = ({ data, initialMealId, loading, setLoading }) => {
   }, [initialMealId, width]);
 
   useEffect(() => {
-    console.log(`results list rendered`);
     document.querySelector(".render-results-box").scrollTo(0, 0);
     document.querySelector(".list-container").scrollTo(0, 0);
   }, [data]);

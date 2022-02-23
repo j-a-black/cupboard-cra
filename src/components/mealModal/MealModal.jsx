@@ -20,7 +20,6 @@ const MealModal = ({ closeModal, mealIdData }) => {
   }
 
   useEffect(() => {
-    console.log("meal modal rendered");
     document.querySelector(".modal").scrollTo(0, 0);
   }, [mealIdData]);
 
@@ -68,7 +67,7 @@ const MealModal = ({ closeModal, mealIdData }) => {
           </a>
         </div>
       </div>
-      {console.log(mealIdData[0])}
+      {/* {console.log(mealIdData[0])} */}
     </div>
   );
 };

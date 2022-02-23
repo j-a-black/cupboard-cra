@@ -36,7 +36,6 @@ const App = () => {
 
   useEffect(() => {
     if (loading) {
-      console.log(`loading rendered`);
       document.querySelector(".list-container").style.visibility = "hidden";
     } else {
       document.querySelector(".list-container").style.visibility = "visible";
@@ -51,9 +50,6 @@ const App = () => {
           <span className="loader"></span>
         </div>
       ) : null}
-      {/* <div className="loader-overlay">
-        <span className="loader"></span>
-      </div> */}
       <ErrorBoundary
         FallbackComponent={Fallback}
         onReset={handleReset}
@@ -66,7 +62,6 @@ const App = () => {
           setLoading={setLoading}
         />
       </ErrorBoundary>
-      {console.log(data)}
     </div>
   );
 };
